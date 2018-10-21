@@ -18,9 +18,9 @@ class Routes extends React.Component {
   state = {routes: [], page: 1, total_pages: 0 }
 
   componentDidMount(){
-    axios.get('/api/get-routes')
+    axios.get('https://www.mountainproject.com/data/get-routes')
       .then( res => {
-        this.setState({ routes: res.data})
+        this.setState({ routes: res.data.routes})
       })
   }
 
