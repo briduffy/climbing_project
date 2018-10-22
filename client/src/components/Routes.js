@@ -18,15 +18,15 @@ class Routes extends React.Component {
   state = {routes: [], page: 1, total_pages: 0 }
 
   componentDidMount(){
-    axios.get('https://www.mountainproject.com/data/get-routes')
+    axios.get('')
       .then( res => {
-        this.setState({ routes: res.data.routes})
+        this.setState({ routes: res.data })
       })
   }
 
   routes() {
     return this.state.routes.map( (routes, r) => {
-      if (routes.imgMedium) {
+      if (routes.routeId) {
         return (
         <Table.Body>
           <Table.Row>
